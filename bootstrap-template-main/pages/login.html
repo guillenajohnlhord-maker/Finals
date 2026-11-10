@@ -1,0 +1,105 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrafficAI | Login</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row auth-wrapper">
+
+      <!-- Image Side -->
+      <div class="col-lg-6 auth-image login d-flex align-items-end p-5">
+        <div class="text-white">
+          <span class="hero-label">TrafficAI Platform</span>
+          <h2 class="fw-bold mt-3">Welcome Back.</h2>
+          <p class="mb-0">
+            Better traffic decisions begin with better information.
+          </p>
+        </div>
+      </div>
+
+      <!-- Login Form -->
+      <div class="col-lg-6 auth-form-side d-flex align-items-center justify-content-center py-5">
+        <div class="w-100 px-3" style="max-width: 410px;">
+
+          <a href="../index.html" class="auth-logo d-block mb-4">
+            <i class="bi bi-signpost-split-fill"></i> TrafficAI
+          </a>
+
+          <h3 class="fw-bold">Login to Your Account</h3>
+          <p class="text-muted">
+            Enter your account details to continue.
+          </p>
+
+          <form action="dashboard.html" method="get">
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white">
+                  <i class="bi bi-envelope"></i>
+                </span>
+                <input type="email" class="form-control"
+                  id="email" name="email"
+                  placeholder="name@example.com" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white">
+                  <i class="bi bi-lock"></i>
+                </span>
+                <input type="password" class="form-control"
+                  id="password" name="password"
+                  placeholder="Enter your password" required>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="remember">
+                <label class="form-check-label" for="remember">
+                  Remember me
+                </label>
+              </div>
+
+              <a href="#" class="small text-brand">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-brand w-100 py-2">
+              <i class="bi bi-box-arrow-in-right me-1"></i>
+              Login
+            </button>
+
+          </form>
+
+          <p class="text-center mt-4 mb-0">
+            Don't have an account?
+            <a href="signup.html" class="text-brand fw-semibold">Sign Up</a>
+          </p>
+
+          <p class="text-center text-muted small mt-4">
+            AI-Based Traffic Congestion Prediction and Signal Optimization
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

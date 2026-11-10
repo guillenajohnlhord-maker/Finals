@@ -1,0 +1,394 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrafficAI | Dashboard</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Desktop Sidebar -->
+      <aside class="col-lg-2 d-none d-lg-block sidebar p-3">
+
+        <a href="../index.html"
+          class="text-white text-decoration-none fw-bold fs-5 d-block mb-4">
+          <i class="bi bi-signpost-split-fill text-warning"></i> TrafficAI
+        </a>
+
+        <ul class="nav nav-pills flex-column gap-1">
+
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link active">
+              <i class="bi bi-speedometer2 me-2"></i>Dashboard
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#traffic-overview" class="nav-link">
+              <i class="bi bi-car-front me-2"></i>Traffic Overview
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#predictions" class="nav-link">
+              <i class="bi bi-graph-up-arrow me-2"></i>Predictions
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#signals" class="nav-link">
+              <i class="bi bi-stoplights me-2"></i>Signal Status
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#reports" class="nav-link">
+              <i class="bi bi-file-earmark-bar-graph me-2"></i>Reports
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#settings" class="nav-link">
+              <i class="bi bi-gear me-2"></i>Settings
+            </a>
+          </li>
+
+          <li class="nav-item mt-4">
+            <a href="../index.html" class="nav-link">
+              <i class="bi bi-box-arrow-left me-2"></i>Logout
+            </a>
+          </li>
+
+        </ul>
+      </aside>
+
+      <!-- Main Dashboard -->
+      <main class="col-lg-10 p-0 dashboard-main">
+
+        <!-- Topbar -->
+        <nav class="navbar dashboard-topbar shadow-sm px-3">
+
+          <button class="btn btn-outline-secondary d-lg-none"
+            type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu" aria-label="Open menu">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <span class="navbar-text fw-semibold d-none d-sm-inline">
+            Traffic Monitoring Dashboard
+          </span>
+
+          <div class="dropdown ms-auto">
+
+            <a href="#" class="d-flex align-items-center text-decoration-none text-dark dropdown-toggle"
+              data-bs-toggle="dropdown">
+
+              <i class="bi bi-person-circle fs-4 me-2 text-brand"></i>
+              <span>Administrator</span>
+
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#settings">Profile</a></li>
+              <li><a class="dropdown-item" href="#settings">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../index.html">Logout</a></li>
+            </ul>
+
+          </div>
+        </nav>
+
+        <div class="p-4">
+
+          <h3 class="fw-bold mb-1">Traffic Overview</h3>
+          <p class="text-muted mb-4">
+            Monitor traffic information and explore congestion analysis.
+          </p>
+
+          <!-- Statistics -->
+          <div class="row g-3 mb-4" id="traffic-overview">
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="card stat-card shadow-sm">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="text-muted small">Traffic Volume</div>
+                    <div class="fs-3 fw-bold">--</div>
+                    <small class="text-muted">Vehicles detected</small>
+                  </div>
+                  <i class="bi bi-car-front"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="card stat-card shadow-sm">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="text-muted small">Congestion Level</div>
+                    <div class="fs-3 fw-bold">--</div>
+                    <small class="text-muted">Prediction result</small>
+                  </div>
+                  <i class="bi bi-graph-up-arrow text-warning"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="card stat-card shadow-sm">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="text-muted small">Signal Efficiency</div>
+                    <div class="fs-3 fw-bold">--</div>
+                    <small class="text-muted">Optimization result</small>
+                  </div>
+                  <i class="bi bi-stoplights text-success"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="card stat-card shadow-sm">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="text-muted small">System Status</div>
+                    <div class="fs-3 fw-bold">Demo</div>
+                    <small class="text-muted">Interface preview</small>
+                  </div>
+                  <i class="bi bi-cpu text-secondary"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Prediction and Signal Cards -->
+          <div class="row g-4 mb-4">
+
+            <!-- Predictions -->
+            <div class="col-lg-5" id="predictions">
+              <div class="card dashboard-card shadow-sm">
+
+                <div class="card-header">
+                  <i class="bi bi-graph-up-arrow text-brand me-2"></i>
+                  Congestion Analysis
+                </div>
+
+                <div class="card-body">
+
+                  <p class="text-muted small">
+                    Illustrative congestion categories, not live predictions.
+                  </p>
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Low Congestion</span>
+                    <span class="badge text-bg-success">Low</span>
+                  </div>
+
+                  <div class="progress mb-3">
+                    <div class="progress-bar bg-success" style="width: 30%">30%</div>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Moderate Congestion</span>
+                    <span class="badge text-bg-warning">Moderate</span>
+                  </div>
+
+                  <div class="progress mb-3">
+                    <div class="progress-bar bg-warning" style="width: 45%">45%</div>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>High Congestion</span>
+                    <span class="badge text-bg-danger">High</span>
+                  </div>
+
+                  <div class="progress">
+                    <div class="progress-bar bg-danger" style="width: 25%">25%</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Signal Status -->
+            <div class="col-lg-7" id="signals">
+              <div class="card dashboard-card shadow-sm">
+
+                <div class="card-header">
+                  <i class="bi bi-stoplights text-brand me-2"></i>
+                  Traffic Signal Status
+                </div>
+
+                <div class="card-body">
+
+                  <p class="text-muted small">
+                    Example signal conditions for interface demonstration.
+                  </p>
+
+                  <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+
+                      <thead class="table-light">
+                        <tr>
+                          <th>Direction</th>
+                          <th>Signal</th>
+                          <th>Green Time</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>Northbound</td>
+                          <td><span class="signal-light signal-green"></span>Green</td>
+                          <td>--</td>
+                          <td><span class="badge text-bg-secondary">Sample</span></td>
+                        </tr>
+
+                        <tr>
+                          <td>Southbound</td>
+                          <td><span class="signal-light signal-red"></span>Red</td>
+                          <td>--</td>
+                          <td><span class="badge text-bg-secondary">Sample</span></td>
+                        </tr>
+
+                        <tr>
+                          <td>Eastbound</td>
+                          <td><span class="signal-light signal-yellow"></span>Yellow</td>
+                          <td>--</td>
+                          <td><span class="badge text-bg-secondary">Sample</span></td>
+                        </tr>
+
+                        <tr>
+                          <td>Westbound</td>
+                          <td><span class="signal-light signal-red"></span>Red</td>
+                          <td>--</td>
+                          <td><span class="badge text-bg-secondary">Sample</span></td>
+                        </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Reports -->
+          <div class="card dashboard-card shadow-sm mb-4" id="reports">
+
+            <div class="card-header">
+              <i class="bi bi-file-earmark-bar-graph text-brand me-2"></i>
+              Traffic Analysis Reports
+            </div>
+
+            <div class="card-body">
+              <p class="text-muted mb-0">
+                Traffic reports and historical information will appear
+                here once the system's data collection and analysis
+                functions are implemented.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Settings -->
+          <div class="card dashboard-card shadow-sm" id="settings">
+
+            <div class="card-header">
+              <i class="bi bi-gear text-brand me-2"></i>
+              System Information
+            </div>
+
+            <div class="card-body">
+              <p><strong>Project:</strong> TrafficAI</p>
+              <p><strong>System:</strong> AI-Based Traffic Congestion Prediction and Signal Optimization</p>
+              <p class="mb-0"><strong>Version:</strong> Demonstration Interface</p>
+            </div>
+
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Mobile Sidebar -->
+  <div class="offcanvas offcanvas-start text-bg-dark"
+    tabindex="-1" id="mobileMenu"
+    aria-labelledby="mobileMenuLabel">
+
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel">
+        <i class="bi bi-signpost-split-fill text-warning"></i> TrafficAI
+      </h5>
+
+      <button type="button" class="btn-close btn-close-white"
+        data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+      <ul class="nav flex-column">
+
+        <li class="nav-item">
+          <a href="dashboard.html" class="nav-link text-white">
+            <i class="bi bi-speedometer2 me-2"></i>Dashboard
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#traffic-overview" class="nav-link text-white">
+            <i class="bi bi-car-front me-2"></i>Traffic Overview
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#predictions" class="nav-link text-white">
+            <i class="bi bi-graph-up-arrow me-2"></i>Predictions
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#signals" class="nav-link text-white">
+            <i class="bi bi-stoplights me-2"></i>Signal Status
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#reports" class="nav-link text-white">
+            <i class="bi bi-file-earmark-bar-graph me-2"></i>Reports
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#settings" class="nav-link text-white">
+            <i class="bi bi-gear me-2"></i>Settings
+          </a>
+        </li>
+
+        <li class="nav-item mt-4">
+          <a href="../index.html" class="nav-link text-white">
+            <i class="bi bi-box-arrow-left me-2"></i>Logout
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
